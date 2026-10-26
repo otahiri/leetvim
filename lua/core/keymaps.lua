@@ -44,3 +44,18 @@ vim.keymap.set("n", "<F1>", function ()
 end, {desc = "add the stdheader if in a c or h file else trigger the nvim help"})
 
 vim.keymap.set("n", "<leader>bd", function () vim.cmd("bd") end, {desc = "delete current buffer"})
+vim.keymap.set("n", "<leader>fe", function()
+  local buf_name = vim.api.nvim_buf_get_name(0)
+  local target_dir
+
+  if buf_name == "" then
+    target_dir = vim.fn.getcwd()
+  else
+    target_dir = vim.fs.dirname(buf_name)
+  end
+  vim.ui.input({ prompt = "New file: "}, function(input)
+    if input and input ~= "" then
+      vim.cmd("edit " .. target_dir .. "/" .. vim.fn.fnameescape(input))
+    end
+  end)
+end, { desc = "Create file in current/root directory" })

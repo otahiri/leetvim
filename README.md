@@ -47,30 +47,53 @@ Ensure you have the following installed on your system:
     nvim
 ```
 
-⌨️ Keymaps
+## ⌨️ Hidden Dashboard Keymaps
 
-```text
-space w  ==> save file
-Ctrl h  ==> Move to left window
-Ctrl j  ==> Move to lower window
-Ctrl k  ==> Move to upper window
-Ctrl l  ==> Move to right window
-Esc ==> clear search highlights or escape terminal mode depending on where it is used
-Esc ==> escape terminal mode
-space cr  ==> rename  variable
-space tc  ==> change color scheme
-space cl  ==> show the lsp config for all servers
-gd ==> go to definition
-gr ==> go to reference
-gI ==> go to implementation
-gy ==> go to type definition
-gD ==> go to declaration
-K ==> show doc for word under cusor
-gK ==> show signature
-space cd  ==> go to declaration
-space fn  ==> new empty file
-F1 ==> add the stdheader if in a c or h file else trigger the nvim help
-space bd  ==> delete current buffer
-space Ctrl  ==> trigger the blink auto complete to auto show on and off (consistent with the machine)
-```
+To maintain a distraction-free startup screen, the dashboard features no visible menus. However, the following keybindings are silently active the moment you launch leetvim:
+
+* `f` — Find a file in the current workspace (Telescope)
+* `o` — Open previously accessed files (Telescope)
+* `g` — Live grep for a string across the current directory (Telescope)
+* `q` — Quit leetvim
+
+## ⌨️ Keymaps
+
+### General & Navigation
+| Keybind | Action |
+| :--- | :--- |
+| `<Space> w` | Save current file |
+| `<Ctrl> h/j/k/l` | Navigate between split windows |
+| `<Esc>` | Clear search highlights (Normal mode) / Exit terminal mode |
+| `<F1>` | Insert 42 `stdheader` (in `.c`/`.h` files) or open Neovim Help |
+
+### Files & Buffers
+| Keybind | Action |
+| :--- | :--- |
+| `<Space> fn` | Create a new empty file |
+| `<Space> bd` | Delete the current buffer |
+| `<Space> tc` | Change colorscheme |
+
+### Telescope (Fuzzy Finding)
+| Keybind | Action |
+| :--- | :--- |
+| `<Space> <Space>` | Find files in the current working directory |
+| `<Space> fo` | Find previously opened files (Oldfiles) |
+| `<Space> fg` | Live grep (Search for a string across the current directory) |
+| `<Space> ff` | Search and switch between open buffers |
+| `<Space> fc` | Search within `leetvim` configuration files |
+| `<Space> fh` | Search Neovim help pages |
+
+### LSP & Autocomplete
+| Keybind | Action |
+| :--- | :--- |
+| `gd` | Go to Definition |
+| `gD` / `<Space> cd` | Go to Declaration |
+| `gr` | Go to References |
+| `gI` | Go to Implementation |
+| `gy` | Go to Type Definition |
+| `K` | Show documentation for the word under the cursor |
+| `gK` | Show function signature |
+| `<Space> cr` | Rename variable across workspace |
+| `<Space> cl` | Show active LSP server configurations |
+| `<Space> <Ctrl>` | Toggle `blink.cmp` auto-completion behavior |
 
