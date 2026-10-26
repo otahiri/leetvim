@@ -33,30 +33,6 @@ vim.keymap.set("n", "<leader>fn", function ()
 end, {desc = "new empty file"})
 
 vim.keymap.set({"n", "v", "i"}, "<F1>", "")
-vim.keymap.set("n","<leader>ce",
-	function ()
-		local current_dir = vim.fn.expand("%:p:h")
-		local markers = {"pyproject.toml", "src/__init__.py", "src/__main__.py"}
-		local match = vim.fs.find(markers, {upward = true, stop = vim.env.HOME, path = current_dir})
-		if #match == 0 then
-			vim.notify("no a python project", vim.log.levels.WARN)
-			return
-		end
-		local project_root = vim.fs.dirname(match[1])
-		vim.notify("running python project", vim.log.levels.INFO)
-		vim.system({"make", "-C", project_root}, {text = true},
-			function (result)
-				vim.schedule(
-					function ()
-						local err_msg = result.stderr
-						if result.stderr then
-							vim.fn.confirm("ERROR\n" .. err_msg, "&OK", 1, "Warning")
-						end
-						vim.notify("[LOG]\n" .. result.stdout, vim.log.levels.INFO, {timeout = 5000})
-				end)
-			end
-		)
-	end , {desc = "run python project if in a python project dir"})
 
 vim.keymap.set("n", "<F1>", function ()
 	local prefix = vim.fn.expand("%:e")
@@ -65,6 +41,6 @@ vim.keymap.set("n", "<F1>", function ()
 	else
 		vim.cmd("help")
 	end
-end)
+end, {desc = "add the stdheader if in a c or h file else trigger the nvim help"})
 
 vim.keymap.set("n", "<leader>bd", function () vim.cmd("bd") end, {desc = "delete current buffer"})
