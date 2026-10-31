@@ -8,7 +8,6 @@ require("snacks").setup({
 
 	dashboard = {
 		enabled = true,
-		col = 38,
 		preset = {
 			keys = {
 				{ icon = " ", key = "f", desc = "Find File", action = function() vim.schedule(function() vim.cmd("Telescope find_files") end) end },
@@ -30,7 +29,7 @@ header = [[
 ██████████████████████     ██████     ████ ███ ███ ██ █████
 ]]
 }, sections = {
-			{section = "header", align = "right"},
+			{section = "header", align = "center"},
 			-- {section = "keys", gap = 1, padding = 1},
 		}
 	},
