@@ -87,7 +87,8 @@ To maintain a distraction-free startup screen, the dashboard features no visible
 | Keybind | Action |
 | :--- | :--- |
 | `gd` | Go to Definition |
-| `gD` / `<Space> cd` | Go to Declaration |
+| `gD`  | Go to Declaration |
+| `<Space> cd` | Toggle lsp diagnostic |
 | `gr` | Go to References |
 | `gI` | Go to Implementation |
 | `gy` | Go to Type Definition |
