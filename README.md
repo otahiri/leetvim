@@ -97,3 +97,22 @@ To maintain a distraction-free startup screen, the dashboard features no visible
 | `<Space> cl` | Show active LSP server configurations |
 | `<Space> <Ctrl>` | Toggle `blink.cmp` auto-completion behavior |
 
+
+### Harpoon
+| Keybind | Action |
+| :--- | :--- |
+| `<Space> 1`| go to harpoon buffer number 1 |
+| `<Space> 2`| go to harpoon buffer number 2 |
+| `<Space> 3`| go to harpoon buffer number 3 |
+| `<Space> 4`| go to harpoon buffer number 4 |
+| `<Space> 5`| go to harpoon buffer number 5 |
+| `<Space> 6`| go to harpoon buffer number 6 |
+| `<Space> 7`| go to harpoon buffer number 7 |
+| `<Space> 8`| go to harpoon buffer number 8 |
+| `<Space> 9`| go to harpoon buffer number 9 |
+| `<Space> a` | add the current buffer to the last harpoon buffer if the buffer count is less than 10 |
+| `<Space> x` | remove the current buffer from harpoon buffers |
+| `<Space> n` | go to the next harpoon buffer |
+| `<Space> p` | go to the previous harpoon buffer |
+| `<Ctrl> e` | toggle harpoon menu |
+

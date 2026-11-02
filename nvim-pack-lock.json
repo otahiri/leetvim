@@ -89,6 +89,11 @@
       "rev": "5d15b2765f59754d7ac263c88a0f6e3e58124951",
       "src": "https://github.com/morhetz/gruvbox"
     },
+    "harpoon": {
+      "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
+    },
     "hexed.nvim": {
       "rev": "3ddd8f0ce9a0daa3e3586c0c3be2412b25e46fe3",
       "src": "https://github.com/johk06/hexed.nvim"

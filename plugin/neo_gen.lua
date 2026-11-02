@@ -13,4 +13,4 @@ require("neogen").setup({
 	}
 })
 
-vim.keymap.set('n', "<leader>nf", function() require("neogen").generate() end, {desc = "Generate [D]ocstring" })
+vim.keymap.set('n', "<leader>dd", function() require("neogen").generate() end, {desc = "Generate [D]ocstring" })
