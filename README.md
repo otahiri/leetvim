@@ -113,6 +113,7 @@ To maintain a distraction-free startup screen, the dashboard features no visible
 | `<Space> 9`| go to harpoon buffer number 9 |
 | `<Space> a` | add the current buffer to the last harpoon buffer if the buffer count is less than 10 |
 | `<Space> x` | remove the current buffer from harpoon buffers |
+| `<Space> X` | clear harpoon buffers |
 | `<Space> n` | go to the next harpoon buffer |
 | `<Space> p` | go to the previous harpoon buffer |
 | `<Ctrl> e` | toggle harpoon menu |
