@@ -3,6 +3,28 @@ vim.pack.add({
 	{ src = 'https://github.com/nvim-lualine/lualine.nvim'},
 })
 
+
+local function harpoon_status()
+	local harpoon = require("harpoon")
+	local list = harpoon:list()
+	local length = list:length()
+	if length == 0 then
+		return ""
+	end
+	local current_file = vim.api.nvim_buf_get_name(0)
+	local current_idx = "-"
+	for i = 1 , length do
+		local item = list:get(i)
+		if item and item.value and item.value ~= "" then
+			if string.sub(current_file, -string.len(item.value)) == item.value then
+				current_idx = tostring(i)
+				break
+			end
+		end
+	end
+	return string.format("⇁  %s/%d", current_idx, length)
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -40,7 +62,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {harpoon_status, 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
