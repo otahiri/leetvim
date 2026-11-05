@@ -65,6 +65,8 @@ To maintain a distraction-free startup screen, the dashboard features no visible
 | `<Ctrl> h/j/k/l` | Navigate between split windows |
 | `<Esc>` | Clear search highlights (Normal mode) / Exit terminal mode |
 | `<F1>` | Insert 42 `stdheader` (in `.c`/`.h` files) or open Neovim Help |
+| `<Enter>` | enter the jump2d search mode you enter a sequence of characters to specify the next spot |
+
 
 ### Files & Buffers
 | Keybind | Action |
