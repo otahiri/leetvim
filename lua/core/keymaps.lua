@@ -6,8 +6,6 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "escape terminal mode" })
 vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end, { desc = "rename  variable" })
 vim.keymap.set("n", "<leader>tc", function () vim.cmd("silent! Themery") end , { desc = "change color scheme" })
 vim.keymap.set("n", "<leader>cl", function()
@@ -63,6 +61,7 @@ end, { desc = "Create file in current/root directory" })
 vim.keymap.set(
 	{ 'n', 'x', 'o' }, '<Esc>',
 	function()
+		vim.cmd("nohlsearch")
 		if not MiniJump.state.jumping then
 			return '<Esc>'
 		end
