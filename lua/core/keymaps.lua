@@ -59,3 +59,14 @@ vim.keymap.set("n", "<leader>fe", function()
     end
   end)
 end, { desc = "Create file in current/root directory" })
+
+vim.keymap.set(
+	{ 'n', 'x', 'o' }, '<Esc>',
+	function()
+		if not MiniJump.state.jumping then
+			return '<Esc>'
+		end
+		MiniJump.stop_jumping()
+	end ,
+	{ expr = true, desc = 'Stop jumping' }
+)
